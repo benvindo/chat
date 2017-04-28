@@ -11,7 +11,7 @@
 export default {
 	data() {
 		return{
-			messageText: 'Padrão'
+			messageText: ''
 		}
 	},
 
@@ -19,7 +19,9 @@ export default {
 		sendMessage(){
 			this.$emit('messagesent', {
 				message: this.messageText,
-				user: "Jonh Doe"
+				user: {
+					name: $('.navbar-right .dropdown .dropdown-toggle').text()
+				}
 			});
 			this.messageText = '';
 		}
